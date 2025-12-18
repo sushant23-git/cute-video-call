@@ -6,6 +6,9 @@ A delightful browser-based video calling application with a kawaii-inspired aest
 ![Node.js](https://img.shields.io/badge/Node.js-Express-mint?style=for-the-badge)
 ![Socket.IO](https://img.shields.io/badge/Socket.IO-Real--time-lavender?style=for-the-badge)
 
+
+### Test it your self
+-- https://cutevideocall-95u52kgc.b4a.run/
 ## ✨ Features
 
 - 🎥 **Real-time Video Calling** - WebRTC peer-to-peer video and audio
