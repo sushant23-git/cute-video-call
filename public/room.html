@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Video Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="room-page">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="room-header">
+        <div class="room-info">
+            <h2>Room: <span id="roomCodeDisplay" class="room-badge"></span></h2>
+        </div>
+        <button id="leaveBtn" class="btn-leave">
+            <span>Leave Room</span>
+            <span class="btn-emoji">👋</span>
+        </button>
+    </div>
+
+    <div class="video-container" id="videoContainer">
+        <!-- Local video will be added here -->
+    </div>
+
+    <div class="controls">
+        <button id="toggleMic" class="control-btn" title="Toggle Microphone">
+            <span class="control-icon">🎤</span>
+            <span class="control-label">Mic On</span>
+        </button>
+        <button id="toggleCamera" class="control-btn" title="Toggle Camera">
+            <span class="control-icon">📹</span>
+            <span class="control-label">Camera On</span>
+        </button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/room.js"></script>
+</body>
+
+</html>

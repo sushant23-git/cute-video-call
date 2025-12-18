@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Cute Video Call</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  
+  <div class="container">
+    <div class="welcome-card">
+      <div class="card-header">
+        <h1>✨ Cute Video Call ✨</h1>
+        <p class="subtitle">Join a room and connect with friends!</p>
+      </div>
+      
+      <form id="joinForm" class="join-form">
+        <div class="form-group">
+          <label for="username">
+            <span class="emoji">💖</span> Your Name
+          </label>
+          <input 
+            type="text" 
+            id="username" 
+            placeholder="Enter your cute name..." 
+            required
+            maxlength="20"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="roomCode">
+            <span class="emoji">🏠</span> Room Code
+          </label>
+          <input 
+            type="text" 
+            id="roomCode" 
+            placeholder="e.g., cutie123" 
+            required
+            maxlength="20"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <span class="emoji">🎨</span> Choose Your Avatar
+          </label>
+          <div class="avatar-selector">
+            <div class="avatar-option" data-avatar="cat">
+              <div class="avatar-circle avatar-cat">🐱</div>
+              <span>Cat</span>
+            </div>
+            <div class="avatar-option" data-avatar="bunny">
+              <div class="avatar-circle avatar-bunny">🐰</div>
+              <span>Bunny</span>
+            </div>
+            <div class="avatar-option" data-avatar="bear">
+              <div class="avatar-circle avatar-bear">🐻</div>
+              <span>Bear</span>
+            </div>
+            <div class="avatar-option" data-avatar="panda">
+              <div class="avatar-circle avatar-panda">🐼</div>
+              <span>Panda</span>
+            </div>
+            <div class="avatar-option" data-avatar="fox">
+              <div class="avatar-circle avatar-fox">🦊</div>
+              <span>Fox</span>
+            </div>
+            <div class="avatar-option selected" data-avatar="star">
+              <div class="avatar-circle avatar-star">⭐</div>
+              <span>Star</span>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn-join">
+          <span>Join Room</span>
+          <span class="btn-emoji">🎉</span>
+        </button>
+      </form>
+      
+      <div class="info-text">
+        <p>💡 <strong>Tip:</strong> Share the same room code with friends to video call together!</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/main.js"></script>
+</body>
+</html>
