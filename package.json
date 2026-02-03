@@ -4,7 +4,7 @@
   "description": "A cute, browser-based video calling app with WebRTC",
   "main": "server.js",
   "engines": {
-    "node": ">=14.0.0",
+   "node": "24.x",
     "npm": ">=6.0.0"
   },
   "scripts": {
