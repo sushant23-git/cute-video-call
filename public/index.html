@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,45 +10,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
-  
+
+  <!-- User Profile Section (shown when authenticated) -->
+  <div id="userProfile" class="user-profile" style="display: none;">
+    <div class="user-info">
+      <span id="userName"></span>
+    </div>
+    <button id="signOutBtn" class="btn-signout">Sign Out 👋</button>
+  </div>
+
   <div class="container">
-    <div class="welcome-card">
+    <!-- Authentication Section -->
+    <div id="authSection" class="auth-card">
       <div class="card-header">
         <h1>✨ Cute Video Call ✨</h1>
-        <p class="subtitle">Join a room and connect with friends!</p>
+        <p class="subtitle">Create an account or login to start calling!</p>
       </div>
-      
-      <form id="joinForm" class="join-form">
+
+      <!-- Auth Tabs -->
+      <div class="auth-tabs">
+        <button id="signupTab" class="auth-tab active">Sign Up</button>
+        <button id="loginTab" class="auth-tab">Login</button>
+      </div>
+
+      <!-- Signup Form -->
+      <form id="signupForm" class="auth-form active">
         <div class="form-group">
-          <label for="username">
-            <span class="emoji">💖</span> Your Name
+          <label for="signupEmail">
+            <span class="emoji">📧</span> Email
           </label>
-          <input 
-            type="text" 
-            id="username" 
-            placeholder="Enter your cute name..." 
-            required
-            maxlength="20"
-          >
+          <input type="email" id="signupEmail" placeholder="your@email.com" required>
         </div>
-        
+
         <div class="form-group">
-          <label for="roomCode">
-            <span class="emoji">🏠</span> Room Code
+          <label for="signupPassword">
+            <span class="emoji">🔒</span> Password
           </label>
-          <input 
-            type="text" 
-            id="roomCode" 
-            placeholder="e.g., cutie123" 
-            required
-            maxlength="20"
-          >
+          <input type="password" id="signupPassword" placeholder="Enter password (min 6 chars)" required minlength="6">
         </div>
-        
+
+        <div class="form-group">
+          <label for="signupUsername">
+            <span class="emoji">💖</span> Username
+          </label>
+          <input type="text" id="signupUsername" placeholder="Your cute name..." required maxlength="20">
+        </div>
+
         <div class="form-group">
           <label>
             <span class="emoji">🎨</span> Choose Your Avatar
@@ -79,19 +92,69 @@
             </div>
           </div>
         </div>
-        
+
+        <button type="submit" class="btn-join">
+          <span>Sign Up</span>
+          <span class="btn-emoji">🎉</span>
+        </button>
+      </form>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="auth-form">
+        <div class="form-group">
+          <label for="loginEmail">
+            <span class="emoji">📧</span> Email
+          </label>
+          <input type="email" id="loginEmail" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">
+            <span class="emoji">🔒</span> Password
+          </label>
+          <input type="password" id="loginPassword" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" class="btn-join">
+          <span>Login</span>
+          <span class="btn-emoji">🚀</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Room Join Section (shown after authentication) -->
+    <div id="roomSection" class="welcome-card" style="display: none;">
+      <div class="card-header">
+        <h1>✨ Join a Room ✨</h1>
+        <p class="subtitle">Enter a room code to start your video call!</p>
+      </div>
+
+      <form id="joinForm" class="join-form">
+        <div class="form-group">
+          <label for="roomCode">
+            <span class="emoji">🏠</span> Room Code
+          </label>
+          <input type="text" id="roomCode" placeholder="e.g., cutie123" required maxlength="20">
+        </div>
+
         <button type="submit" class="btn-join">
           <span>Join Room</span>
           <span class="btn-emoji">🎉</span>
         </button>
       </form>
-      
+
       <div class="info-text">
         <p>💡 <strong>Tip:</strong> Share the same room code with friends to video call together!</p>
       </div>
     </div>
   </div>
-  
+
+  <!-- Load Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Load Auth Script -->
+  <script src="/js/auth.js"></script>
+  <!-- Load Main Script -->
   <script src="/js/main.js"></script>
 </body>
+
 </html>

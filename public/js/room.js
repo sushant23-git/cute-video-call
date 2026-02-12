@@ -1,12 +1,14 @@
 // Room page JavaScript - WebRTC implementation
 
 // Get user info from session storage
+const userId = sessionStorage.getItem('userId');
 const username = sessionStorage.getItem('username');
 const roomCode = sessionStorage.getItem('roomCode');
 const avatar = sessionStorage.getItem('avatar');
 
-// Redirect if no user info
-if (!username || !roomCode || !avatar) {
+// Redirect if no user info or not authenticated
+if (!username || !roomCode || !avatar || !userId) {
+    alert('Please login first! 🔒');
     window.location.href = '/';
 }
 
@@ -94,11 +96,12 @@ function initSocket() {
     socket.on('connect', () => {
         console.log('Connected to signaling server');
 
-        // Join the room
+        // Join the room with user ID
         socket.emit('join-room', {
             roomCode,
             username,
-            avatar
+            avatar,
+            userId  // Include authenticated user ID
         });
     });
 
